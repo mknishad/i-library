@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">iLibrary</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="sign_in">Sign In</string>
 </resources>

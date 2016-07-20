@@ -12,7 +12,7 @@
     <EditText
         android:id="@+id/etUserName"
         android:layout_marginTop="80dp"
-        android:hint="Enter Username"
+        android:hint="@string/enter_username"
         android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -20,7 +20,7 @@
     <EditText
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUserName"
-        android:hint="Enter password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:typeface="monospace"
         android:layout_marginTop="5dp"
@@ -31,7 +31,7 @@
         android:id="@+id/btnLogin"
         android:layout_below="@+id/etPassword"
         android:layout_marginTop="5dp"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
         android:onClick="signIn"
