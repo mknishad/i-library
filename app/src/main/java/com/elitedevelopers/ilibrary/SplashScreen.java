@@ -17,13 +17,13 @@ public class SplashScreen extends Activity {
         super.onCreate(icicle);
         setContentView(R.layout.splash_screen);
 
-        /* New Handler to start the Home-Activity
+        /* New Handler to start the LoginActivity-Activity
          * and close this Splash-Screen after some seconds.*/
-        new Handler().postDelayed(new Runnable(){1
+        new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashScreen.this,LoginScreen.class);
+                Intent mainIntent = new Intent(SplashScreen.this,LoginActivity.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }
