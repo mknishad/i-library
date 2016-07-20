@@ -41,6 +41,9 @@ public class LoginActivity extends AppCompatActivity {
                 // if username and password were not saved previously
                 // save new username and password
                 preferences.saveData(userName, password);
+                // clear username and password from EditText views
+                etUserName.setText("");
+                etPassword.setText("");
                 // make an intent to go to home activity
                 Intent intent = new Intent(this, HomeActivity.class);
                 // go to home activity
@@ -49,6 +52,9 @@ public class LoginActivity extends AppCompatActivity {
                 // if username and password were saved previously
                 // check if entered username and password matched the saved username and password
                 if (savedUserInfo.get(0).equals(userName) && savedUserInfo.get(1).equals(password)) {
+                    // clear username and password from EditText views
+                    etUserName.setText("");
+                    etPassword.setText("");
                     // if matched go to home activity
                     // make an intent to go to home activity
                     Intent intent = new Intent(this, HomeActivity.class);
@@ -57,11 +63,17 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     // if not matched show user an error message
                     Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                    // clear username and password from EditText views
+                    etUserName.setText("");
+                    etPassword.setText("");
                 }
             }
         } else {
             // if either username or password field is empty show a message to user
             Toast.makeText(this, "Enter username and password", Toast.LENGTH_SHORT).show();
+            // clear username and password from EditText views
+            etUserName.setText("");
+            etPassword.setText("");
         }
     }
 

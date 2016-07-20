@@ -26,7 +26,7 @@ public class Preferences {
         editor.commit();
     }
 
-    // return saved data as array list
+    // return saved data as array list-
     public ArrayList<String> retrieveData() {
         ArrayList<String> arrayList = new ArrayList<>();
         String userName = sharedPreferences.getString("userName", "No Data");
