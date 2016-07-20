@@ -9,4 +9,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
 
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_marginTop="80dp"
+        android:hint="Enter Username"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_below="@+id/etUserName"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        android:typeface="monospace"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="5dp"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:onClick="signIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
