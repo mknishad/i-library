@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         String userName = etUserName.getText().toString();
         String pasword = etPassword.getText().toString();
         ArrayList<String> savedUserInfo = preferences.retrieveData();
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, HomeActivity.class);
 
         if (!userName.equals("") && !pasword.equals("")) {
             if (savedUserInfo.get(0).equals("No Data") || savedUserInfo.get(1).equals("No Data")) {
