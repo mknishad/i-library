@@ -1,7 +1,9 @@
-package com.elitedevelopers.ilibrary;
+package com.elitedevelopers.ilibrary.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.elitedevelopers.ilibrary.R;
 
 public class BookDetailsActivity extends AppCompatActivity {
 

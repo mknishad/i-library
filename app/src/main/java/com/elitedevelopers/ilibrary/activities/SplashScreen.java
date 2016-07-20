@@ -1,16 +1,18 @@
-package com.elitedevelopers.ilibrary;
+package com.elitedevelopers.ilibrary.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.elitedevelopers.ilibrary.R;
+
 /**
  * Created by Nishad on 21-Jul-16.
  */
 public class SplashScreen extends Activity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 2000;
+    private final int SPLASH_DISPLAY_LENGTH = 2000; // set the delay for splash screen
 
     @Override
     public void onCreate(Bundle icicle) {

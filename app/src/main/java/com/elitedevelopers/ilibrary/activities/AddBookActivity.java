@@ -1,13 +1,15 @@
-package com.elitedevelopers.ilibrary;
+package com.elitedevelopers.ilibrary.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class BookListActivity extends AppCompatActivity {
+import com.elitedevelopers.ilibrary.R;
+
+public class AddBookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_list);
+        setContentView(R.layout.activity_add_book);
     }
 }
