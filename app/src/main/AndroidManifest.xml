@@ -34,7 +34,8 @@
             android:name=".LoginActivity"
             android:label="@string/app_name" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".AuthorListActivity"></activity>
+        <activity android:name=".AuthorListActivity" />
+        <activity android:name=".CategoryListActivity"></activity>
     </application>
 
 </manifest>
