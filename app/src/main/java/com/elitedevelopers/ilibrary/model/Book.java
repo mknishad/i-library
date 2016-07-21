@@ -16,7 +16,7 @@ public class Book {
     }
 
     // constructor without id
-    public Book(String authorName, String bookName, String category, String description) {
+    public Book(String bookName, String authorName,  String category, String description) {
 
         this.authorName = authorName;
         this.bookName = bookName;
@@ -25,7 +25,7 @@ public class Book {
     }
 
     // constructor with id
-    public Book(String authorName, String bookName, String category, String description, int id) {
+    public Book(int id, String bookName, String authorName,  String category, String description) {
 
         this.authorName = authorName;
         this.bookName = bookName;

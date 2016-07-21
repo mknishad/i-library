@@ -9,20 +9,22 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Books.db";
-    private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_BOOKS = "Books";
+    static final String DATABASE_NAME = "Books.db";
+    static final int DATABASE_VERSION = 1;
+    static final String TABLE_BOOKS = "Books";
 
-    private static final String COL_ID = "Id";
-    private static final String COL_BOOK_NAME = "BookName";
-    private static final String COL_AUTHOR_NAME = "AuthorName";
-    private static final String COL_CATEGORY = "Category";
-    private static final String COL_DESCRIPTION = "Description";
+    static final String COL_ID = "Id";
+    static final String COL_BOOK_NAME = "BookName";
+    static final String COL_AUTHOR_NAME = "AuthorName";
+    static final String COL_CATEGORY = "Category";
+    static final String COL_DESCRIPTION = "Description";
 
+    // query to create a table on the database
     private static String CREATE_TABLE = "CREATE TABLE " + TABLE_BOOKS + " (" + COL_ID + " INTEGER PRIMARY KEY, "
             + COL_BOOK_NAME + " TEXT, " + COL_AUTHOR_NAME + " TEXT, " + COL_CATEGORY + " TEXT, " + COL_DESCRIPTION
             + " TEXT);";
 
+    // constructor
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
