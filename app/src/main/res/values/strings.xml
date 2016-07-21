@@ -10,4 +10,9 @@
     <string name="category">Category</string>
     <string name="copyright_elite_developers">©2016 Elite Developers</string>
     <string name="about">About</string>
+    <string name="book_name">Book Name</string>
+    <string name="author_name">Author Name</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

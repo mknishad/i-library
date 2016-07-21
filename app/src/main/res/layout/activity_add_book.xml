@@ -10,4 +10,67 @@
     android:background="@color/colorAppMain"
     tools:context=".activities.AddBookActivity">
 
+    <EditText
+        android:id="@+id/etBookName"
+        android:hint="@string/book_name"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etAuthorName"
+        android:layout_below="@+id/etBookName"
+        android:layout_marginTop="10dp"
+        android:hint="@string/author_name"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etCategory"
+        android:layout_below="@id/etAuthorName"
+        android:layout_marginTop="10dp"
+        android:hint="@string/category"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_below="@id/etCategory"
+        android:layout_marginTop="10dp"
+        android:hint="@string/description"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_below="@+id/etDescription"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:text="@string/cancel"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorSkyBlue"
+        android:onClick="gotoPreviousActivity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_below="@+id/etDescription"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorSkyBlue"
+        android:onClick="saveData"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
