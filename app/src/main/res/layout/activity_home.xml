@@ -19,6 +19,7 @@
         android:textAllCaps="false"
         android:background="@color/colorSkyBlue"
         android:textColor="@color/colorWhite"
+        android:onClick="gotoAddBookActivity"
         android:layout_width="200dp"
         android:layout_height="wrap_content" />
 
@@ -54,6 +55,7 @@
         android:textAllCaps="false"
         android:background="@color/colorSkyBlue"
         android:textColor="@color/colorWhite"
+        android:onClick="gotoAuthorListActivity"
         android:layout_width="200dp"
         android:layout_height="wrap_content" />
 
@@ -67,6 +69,7 @@
         android:textAllCaps="false"
         android:background="@color/colorSkyBlue"
         android:textColor="@color/colorWhite"
+        android:onClick="gotoCategoryListActivity"
         android:layout_width="200dp"
         android:layout_height="wrap_content" />
 
