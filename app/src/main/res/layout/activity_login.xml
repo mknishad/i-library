@@ -7,12 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorAppMain"
     tools:context=".activities.LoginActivity">
 
     <EditText
         android:id="@+id/etUserName"
         android:layout_marginTop="80dp"
         android:hint="@string/enter_username"
+        android:textSize="25sp"
         android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -21,6 +23,7 @@
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUserName"
         android:hint="@string/enter_password"
+        android:textSize="25sp"
         android:inputType="textPassword"
         android:typeface="monospace"
         android:layout_marginTop="5dp"
@@ -30,11 +33,22 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_below="@+id/etPassword"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
         android:onClick="signIn"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:background="@color/colorSkyBlue"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvCopyright"
+        android:text="@string/copyright_elite_developers"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -3,4 +3,10 @@
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter password</string>
     <string name="sign_in">Sign In</string>
+    <string name="add_book">Add Book</string>
+    <string name="or">Or</string>
+    <string name="view_by">View by</string>
+    <string name="author">Author</string>
+    <string name="category">Category</string>
+    <string name="copyright_elite_developers">©2016 Elite Developers</string>
 </resources>
