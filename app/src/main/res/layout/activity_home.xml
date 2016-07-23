@@ -73,11 +73,14 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/newButton"
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Switch"
+        android:id="@+id/switch1"
         android:layout_below="@+id/btnCategory"
-        android:text="new button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
+
 
 </RelativeLayout>
