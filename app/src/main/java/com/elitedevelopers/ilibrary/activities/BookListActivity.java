@@ -24,11 +24,11 @@ public class BookListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
 
-        bookListView = (ListView) findViewById(R.id.lvBookList);
-        booksDataSource = new BooksDataSource(this);
-        books = booksDataSource.getAllBooks();
-        booksAdapter = new BookAdapter(this, books);
-        bookListView.setAdapter(booksAdapter);
+        bookListView = (ListView) findViewById(R.id.lvBookList);    // initialize list view
+        booksDataSource = new BooksDataSource(this);    // to operate database operations
+        books = booksDataSource.getBooksByAuthor();          // get all books from database
+        booksAdapter = new BookAdapter(this, books);    // initialize new adapter
+        bookListView.setAdapter(booksAdapter);          // set the adapter to list view
     }
 
 }

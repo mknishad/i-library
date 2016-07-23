@@ -10,4 +10,10 @@
     android:background="@color/colorAppMain"
     tools:context=".activities.CategoryListActivity">
 
+    <ListView
+        android:id="@+id/lvCategoryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
 </RelativeLayout>

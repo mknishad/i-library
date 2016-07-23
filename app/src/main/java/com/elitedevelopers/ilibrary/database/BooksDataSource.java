@@ -65,8 +65,8 @@ public class BooksDataSource {
         return book;
     }
 
-    // return all books from the table
-    public ArrayList<Book> getAllBooks() {
+    // return all books by  from the table
+    public ArrayList<Book> getBooksByAuthor() {
         ArrayList<Book> books = new ArrayList<>();
 
         this.open();
@@ -84,6 +84,48 @@ public class BooksDataSource {
         database.close();
 
         return books;
+    }
+
+    // return all categories from the table
+    public ArrayList<String> getCategories() {
+        ArrayList<String> categories = new ArrayList<>();
+        this.open();
+        Cursor cursor = database.rawQuery("SELECT DISTINCT " + DatabaseHelper.COL_CATEGORY + " FROM "
+                        + DatabaseHelper.TABLE_BOOKS, null);
+
+        if (cursor != null && cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for (int i=0; i<cursor.getCount(); i++) {
+                String mCategory = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_CATEGORY));
+                categories.add(mCategory);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        database.close();
+
+        return categories;
+    }
+
+    // return all authors from the table
+    public ArrayList<String> getAuthors() {
+        ArrayList<String> authors = new ArrayList<>();
+        this.open();
+        Cursor cursor = database.rawQuery("SELECT DISTINCT " + DatabaseHelper.COL_AUTHOR_NAME + " FROM "
+                + DatabaseHelper.TABLE_BOOKS, null);
+
+        if (cursor != null && cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for (int i=0; i<cursor.getCount(); i++) {
+                String mCategory = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_AUTHOR_NAME));
+                authors.add(mCategory);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        database.close();
+
+        return authors;
     }
 
     // update a book information

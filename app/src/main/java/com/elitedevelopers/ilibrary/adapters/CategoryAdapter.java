@@ -9,23 +9,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.elitedevelopers.ilibrary.R;
-import com.elitedevelopers.ilibrary.model.Book;
 
 import java.util.ArrayList;
 
 /**
- * Created by Nishad on 23-Jul-16.
+ * Created by Nishad on 24-Jul-16.
  */
-public class BookAdapter extends ArrayAdapter<Book> {
+public class CategoryAdapter extends ArrayAdapter<String> {
 
-    private ArrayList<Book> books;
-    private Context context;
+    Context context;
+    ArrayList<String> categories;
 
     // constructor
-    public BookAdapter(Context context, ArrayList<Book> books) {
-        super(context, R.layout.custom_row, books);
+    public CategoryAdapter(Context context, ArrayList<String> categories) {
+        super(context, R.layout.custom_row, categories);
         this.context = context;
-        this.books = books;
+        this.categories = categories;
     }
 
     // view holder class
@@ -53,8 +52,9 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         // set contents to the views
         viewHolder.ivIcon.setImageResource(R.drawable.book);
-        viewHolder.tvName.setText(books.get(position).getBookName());
+        viewHolder.tvName.setText(categories.get(position));
 
         return convertView;
     }
+
 }
