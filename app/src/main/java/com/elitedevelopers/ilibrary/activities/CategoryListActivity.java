@@ -27,7 +27,7 @@ public class CategoryListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category_list);
 
         categoryListView = (ListView) findViewById(R.id.lvCategoryList);    // initialize list view
-        booksDataSource = new BooksDataSource(this);            // to operate database operations
+        booksDataSource = new BooksDataSource(this);           // to operate database operations
         categories = booksDataSource.getCategories();          // get all category from database
         categoryAdapter = new CategoryAdapter(this, categories);    // initialize new adapter
         categoryListView.setAdapter(categoryAdapter);          // set the adapter to list view
@@ -37,6 +37,7 @@ public class CategoryListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // start BookListActivity
                 Intent intent = new Intent(CategoryListActivity.this, BookListActivity.class);
+                intent.putExtra("type", "Category");
                 intent.putExtra("category", categories.get(position));
                 startActivity(intent);
             }

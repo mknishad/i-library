@@ -65,12 +65,35 @@ public class BooksDataSource {
         return book;
     }
 
-    // return all books by  from the table
-    public ArrayList<Book> getBooksByAuthor() {
+    // return all books by author from the table Books
+    public ArrayList<Book> getBooksByAuthor(String author) {
         ArrayList<Book> books = new ArrayList<>();
 
         this.open();
-        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS, null);
+        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
+                + DatabaseHelper.COL_AUTHOR_NAME + " = " + author, null);
+
+        if (cursor != null && cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for (int i=0; i<cursor.getCount(); i++) {
+                book = createBook(cursor);
+                books.add(book);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        database.close();
+
+        return books;
+    }
+
+    // return all books by category from the table Books
+    public ArrayList<Book> getBooksByCategory(String category) {
+        ArrayList<Book> books = new ArrayList<>();
+
+        this.open();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
+                + DatabaseHelper.COL_CATEGORY + " = " + category, null);
 
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
