@@ -6,7 +6,6 @@
 
     <ImageView
         android:id="@+id/ivIcon"
-        android:src="@drawable/kobi_mamun"
         android:layout_width="60dp"
         android:layout_height="60dp" />
 

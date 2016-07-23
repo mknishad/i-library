@@ -49,6 +49,7 @@ public class BooksDataSource {
         return inserted>0 ? true:false;
     }
 
+    // get a single book from the table
     public Book getBook(int id) {
         this.open();
 
@@ -64,6 +65,7 @@ public class BooksDataSource {
         return book;
     }
 
+    // return all books from the table
     public ArrayList<Book> getAllBooks() {
         ArrayList<Book> books = new ArrayList<>();
 
@@ -84,6 +86,7 @@ public class BooksDataSource {
         return books;
     }
 
+    // update a book information
     public boolean updateBook(int id, Book book) {
         this.open();
 
@@ -100,6 +103,7 @@ public class BooksDataSource {
         return updated>0 ? true:false;
     }
 
+    // delete a book from the table
     public boolean deleteBook(int id) {
         this.open();
 
@@ -109,6 +113,7 @@ public class BooksDataSource {
         return deleted>0 ? true:false;
     }
 
+    // create a book from cursor data
     private Book createBook(Cursor cursor) {
         int mId = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COL_ID));
         String mBookName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_BOOK_NAME));

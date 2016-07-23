@@ -17,7 +17,6 @@ public class Book {
 
     // constructor without id
     public Book(String bookName, String authorName,  String category, String description) {
-
         this.authorName = authorName;
         this.bookName = bookName;
         this.category = category;
@@ -26,7 +25,6 @@ public class Book {
 
     // constructor with id
     public Book(int id, String bookName, String authorName,  String category, String description) {
-
         this.authorName = authorName;
         this.bookName = bookName;
         this.category = category;
@@ -34,6 +32,7 @@ public class Book {
         this.id = id;
     }
 
+    // override toString method to return only book name
     @Override
     public String toString() {
         return bookName;
