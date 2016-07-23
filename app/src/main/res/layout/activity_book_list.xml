@@ -10,4 +10,10 @@
     android:background="@color/colorAppMain"
     tools:context=".activities.BookListActivity">
 
+    <ListView
+        android:id="@+id/lvBookList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
 </RelativeLayout>
