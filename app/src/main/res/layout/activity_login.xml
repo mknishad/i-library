@@ -10,18 +10,36 @@
     android:background="@color/colorAppMain"
     tools:context=".activities.LoginActivity">
 
+    <ImageView
+        android:id="@+id/ivUser"
+        android:src="@drawable/icon_user"
+        android:layout_alignBottom="@+id/etUserName"
+        android:padding="5dp"
+        android:layout_width="51dp"
+        android:layout_height="51dp" />
+
     <EditText
         android:id="@+id/etUserName"
         android:layout_marginTop="80dp"
         android:hint="@string/enter_username"
+        android:layout_toRightOf="@+id/ivUser"
         android:textSize="25sp"
         android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/ivPassword"
+        android:src="@drawable/icon_key"
+        android:layout_alignBottom="@+id/etPassword"
+        android:padding="5dp"
+        android:layout_width="51dp"
+        android:layout_height="51dp" />
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUserName"
+        android:layout_toRightOf="@+id/ivPassword"
         android:hint="@string/enter_password"
         android:textSize="25sp"
         android:inputType="textPassword"
@@ -34,6 +52,8 @@
         android:id="@+id/btnLogin"
         android:layout_below="@+id/etPassword"
         android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/icon_login"
+        android:paddingLeft="5dp"
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
@@ -41,7 +61,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
         android:background="@color/colorSkyBlue"
-        android:layout_width="120dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content" />
 
     <TextView

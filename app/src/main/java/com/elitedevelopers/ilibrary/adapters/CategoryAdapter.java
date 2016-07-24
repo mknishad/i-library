@@ -51,7 +51,7 @@ public class CategoryAdapter extends ArrayAdapter<String> {
         }
 
         // set contents to the views
-        viewHolder.ivIcon.setImageResource(R.drawable.book);
+        viewHolder.ivIcon.setImageResource(R.drawable.icon_category);
         viewHolder.tvName.setText(categories.get(position));
 
         return convertView;

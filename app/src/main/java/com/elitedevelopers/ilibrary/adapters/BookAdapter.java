@@ -52,7 +52,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
         }
 
         // set contents to the views
-        viewHolder.ivIcon.setImageResource(R.drawable.book);
+        viewHolder.ivIcon.setImageResource(R.drawable.icon_book);
         viewHolder.tvName.setText(books.get(position).getBookName());
 
         return convertView;

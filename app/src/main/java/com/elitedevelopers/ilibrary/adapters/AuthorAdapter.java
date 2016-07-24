@@ -51,7 +51,7 @@ public class AuthorAdapter extends ArrayAdapter<String> {
         }
 
         // set contents to the views
-        viewHolder.ivIcon.setImageResource(R.drawable.kobi_mamun);
+        viewHolder.ivIcon.setImageResource(R.drawable.icon_author);
         viewHolder.tvName.setText(authors.get(position));
 
         return convertView;

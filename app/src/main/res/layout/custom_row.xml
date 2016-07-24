@@ -6,11 +6,15 @@
 
     <ImageView
         android:id="@+id/ivIcon"
+        android:src="@drawable/icon_book"
         android:layout_width="60dp"
         android:layout_height="60dp" />
 
     <TextView
         android:id="@+id/tvName"
+        android:text="Sample Text"
+        android:padding="5dp"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
