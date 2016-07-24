@@ -37,7 +37,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         booksDataSource = new BooksDataSource(this);
         // get the id of the selected book
         id = getIntent().getIntExtra("id", 0);
-        viewBy = getIntent().getStringExtra("viewBy");
+        viewBy = getIntent().getStringExtra("type");
 
         if (id > 0) {
             book = booksDataSource.getBook(id);
@@ -60,8 +60,8 @@ public class BookDetailsActivity extends AppCompatActivity {
                 } else if (viewBy.equals("Category")) {
                     intent.putExtra("category", tvCategoryName.getText().toString());
                 }
-                this.finish();
                 startActivity(intent);
+                this.finish();
             } else {
                 Toast.makeText(this, tvBookName.getText().toString() + " can't be deleted!", Toast.LENGTH_SHORT).show();
             }
@@ -69,6 +69,13 @@ public class BookDetailsActivity extends AppCompatActivity {
     }
 
     public void editBook(View view) {
-
+        Intent intent = new Intent(BookDetailsActivity.this, AddBookActivity.class);
+        intent.putExtra("id", book.getId());
+        intent.putExtra("type", viewBy);
+        intent.putExtra("name", tvBookName.getText().toString());
+        intent.putExtra("author", tvAuthorName.getText().toString());
+        intent.putExtra("category", tvCategoryName.getText().toString());
+        intent.putExtra("description", tvDescription.getText().toString());
+        startActivity(intent);
     }
 }
