@@ -102,4 +102,17 @@ public class BookDetailsActivity extends AppCompatActivity {
         intent.putExtra("description", tvDescription.getText().toString());
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(BookDetailsActivity.this, BookListActivity.class);
+        intent.putExtra("type", viewBy);
+        if (viewBy.equals("Author")) {
+            intent.putExtra("author", tvAuthorName.getText().toString());
+        } else if (viewBy.equals("Category")) {
+            intent.putExtra("category", tvCategoryName.getText().toString());
+        }
+        startActivity(intent);
+        this.finish();
+    }
 }

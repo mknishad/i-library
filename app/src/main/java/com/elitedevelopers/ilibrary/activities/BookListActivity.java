@@ -1,8 +1,8 @@
 package com.elitedevelopers.ilibrary.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -55,6 +55,18 @@ public class BookListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent;
+        if (viewBy.equals("Author")) {
+            intent = new Intent(BookListActivity.this,  AuthorListActivity.class);
+        } else {
+            intent = new Intent(BookListActivity.this,  CategoryListActivity.class);
+        }
+        startActivity(intent);
+        this.finish();
     }
 
 }
