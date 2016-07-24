@@ -70,8 +70,11 @@ public class BooksDataSource {
         ArrayList<Book> books = new ArrayList<>();
 
         this.open();
-        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
-                + DatabaseHelper.COL_AUTHOR_NAME + " = " + author, null);
+        /*Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
+                + DatabaseHelper.COL_AUTHOR_NAME + " = " + author, null); */
+        Cursor cursor = database.query(DatabaseHelper.TABLE_BOOKS, new String[] {DatabaseHelper.COL_ID,
+                DatabaseHelper.COL_BOOK_NAME, DatabaseHelper.COL_AUTHOR_NAME, DatabaseHelper.COL_CATEGORY,
+                DatabaseHelper.COL_DESCRIPTION}, DatabaseHelper.COL_AUTHOR_NAME + " = '" + author + "';", null, null, null, null);
 
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -92,8 +95,11 @@ public class BooksDataSource {
         ArrayList<Book> books = new ArrayList<>();
 
         this.open();
-        Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
-                + DatabaseHelper.COL_CATEGORY + " = " + category, null);
+        /*Cursor cursor = database.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_BOOKS + " WHERE "
+                + DatabaseHelper.COL_CATEGORY + " = " + category, null);*/
+        Cursor cursor = database.query(DatabaseHelper.TABLE_BOOKS, new String[] {DatabaseHelper.COL_ID,
+                DatabaseHelper.COL_BOOK_NAME, DatabaseHelper.COL_AUTHOR_NAME, DatabaseHelper.COL_CATEGORY,
+                DatabaseHelper.COL_DESCRIPTION}, DatabaseHelper.COL_CATEGORY + " = '" + category + "';", null, null, null, null);
 
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();

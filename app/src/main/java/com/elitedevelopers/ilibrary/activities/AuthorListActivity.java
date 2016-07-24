@@ -37,7 +37,7 @@ public class AuthorListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // start BookListActivity
                 Intent intent = new Intent(AuthorListActivity.this, BookListActivity.class);
-                intent.putExtra("type", "Authors");
+                intent.putExtra("type", "Author");
                 intent.putExtra("author", authors.get(position));
                 startActivity(intent);
             }

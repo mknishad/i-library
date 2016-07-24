@@ -15,7 +15,7 @@ import com.elitedevelopers.ilibrary.R;
  */
 public class SplashScreen extends Activity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 10000; // set the delay for splash screen
+    private final int SPLASH_DISPLAY_LENGTH = 3000; // set the delay for splash screen
 
     @Override
     public void onCreate(Bundle icicle) {

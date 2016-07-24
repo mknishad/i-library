@@ -41,7 +41,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="25sp"
         android:background="@color/colorSkyBlue"
-        android:layout_width="200dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content" />
 
     <TextView

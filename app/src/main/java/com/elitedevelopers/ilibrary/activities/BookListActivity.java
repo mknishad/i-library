@@ -1,7 +1,10 @@
 package com.elitedevelopers.ilibrary.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,6 +21,7 @@ public class BookListActivity extends AppCompatActivity {
     private ArrayList<Book> books;
     private ArrayAdapter<Book> booksAdapter;
     private BooksDataSource booksDataSource;
+    String viewBy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +30,31 @@ public class BookListActivity extends AppCompatActivity {
 
         bookListView = (ListView) findViewById(R.id.lvBookList);    // initialize list view
         booksDataSource = new BooksDataSource(this);    // to operate database operations
+
+        // get intent type
         String type = getIntent().getStringExtra("type");
         if (type.equals("Category")) {
             String category = getIntent().getStringExtra("category");
-            books = booksDataSource.getBooksByCategory(category);
-        } else {
+            viewBy = "Category";
+            books = booksDataSource.getBooksByCategory(category);   // get books of this category from database
+        } else if (type.equals("Author")){
             String author = getIntent().getStringExtra("author");
-            books = booksDataSource.getBooksByAuthor(author);      // get all books from database
+            viewBy = "Author";
+            books = booksDataSource.getBooksByAuthor(author);      // get books of this author from database
         }
+
         booksAdapter = new BookAdapter(this, books);    // initialize new adapter
         bookListView.setAdapter(booksAdapter);          // set the adapter to list view
+
+        bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(BookListActivity.this, BookDetailsActivity.class);
+                intent.putExtra("id", books.get(position).getId());
+                intent.putExtra("viewBy", viewBy);
+                startActivity(intent);
+            }
+        });
     }
 
 }

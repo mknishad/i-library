@@ -39,14 +39,15 @@ public class AddBookActivity extends AppCompatActivity {
 
     // save button action
     public void saveData(View view) {
+        // collect the inputs
+        String bookName = etBookName.getText().toString();
+        String authorName = etAuthorName.getText().toString();
+        String category = etCategory.getText().toString();
+        String description = etDescription.getText().toString();
+
         // check if the input fields are empty or not
-        if (!etBookName.equals("") && !etAuthorName.equals("") && !etCategory.equals("") && !etDescription.equals("")) {
-            // if input fields are not empty collect the inputs
-            String bookName = etBookName.getText().toString();
-            String authorName = etAuthorName.getText().toString();
-            String category = etCategory.getText().toString();
-            String description = etDescription.getText().toString();
-            // make a new book with the inputs
+        if (!bookName.equals("") && !authorName.equals("") && !category.equals("") && !description.equals("")) {
+            // if fields are not empty make a new book with the inputs
             book = new Book(bookName, authorName, category, description);
             // add book to database
             boolean saved = booksDataSource.addBook(book);

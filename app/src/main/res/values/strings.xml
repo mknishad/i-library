@@ -15,4 +15,10 @@
     <string name="description">Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="name">Name:</string>
+    <string name="author_">Author:</string>
+    <string name="category_">Category:</string>
+    <string name="abcd">abcdefghijklmnopqrstuvwxyz</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>
