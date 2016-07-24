@@ -2,7 +2,9 @@ package com.elitedevelopers.ilibrary.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,6 +43,20 @@ public class AddBookActivity extends AppCompatActivity {
         etAuthorName.setText(getIntent().getStringExtra("author"));
         etCategory.setText(getIntent().getStringExtra("category"));
         etDescription.setText(getIntent().getStringExtra("description"));
+
+        // enable up navigation
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // cancel button action
