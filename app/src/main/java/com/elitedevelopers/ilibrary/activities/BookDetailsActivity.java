@@ -1,5 +1,8 @@
 package com.elitedevelopers.ilibrary.activities;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,11 +24,14 @@ public class BookDetailsActivity extends AppCompatActivity {
     private Book book;
     private int id;
     private String viewBy;
+    private  Activity activity = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
+
+        activity = this;
 
         // initialize  the views
         tvBookName = (TextView) findViewById(R.id.tvBookName);
@@ -50,21 +56,39 @@ public class BookDetailsActivity extends AppCompatActivity {
 
     public void deleteBook(View view) {
         if (id > 0) {
-            boolean deleted = booksDataSource.deleteBook(id);
-            if (deleted) {
-                Toast.makeText(this, tvBookName.getText().toString() + " deleted successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(BookDetailsActivity.this, BookListActivity.class);
-                intent.putExtra("type", viewBy);
-                if (viewBy.equals("Author")) {
-                    intent.putExtra("author", tvAuthorName.getText().toString());
-                } else if (viewBy.equals("Category")) {
-                    intent.putExtra("category", tvCategoryName.getText().toString());
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setMessage("Are you sure to delete " + book.getBookName() + "?");
+
+            alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    boolean deleted = booksDataSource.deleteBook(id);
+                    if (deleted) {
+                        Toast.makeText(BookDetailsActivity.this, tvBookName.getText().toString() + " deleted successfully!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(BookDetailsActivity.this, BookListActivity.class);
+                        intent.putExtra("type", viewBy);
+                        if (viewBy.equals("Author")) {
+                            intent.putExtra("author", tvAuthorName.getText().toString());
+                        } else if (viewBy.equals("Category")) {
+                            intent.putExtra("category", tvCategoryName.getText().toString());
+                        }
+                        startActivity(intent);
+                        activity.finish();
+                    } else {
+                        Toast.makeText(BookDetailsActivity.this, tvBookName.getText().toString() + " can't be deleted!", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                startActivity(intent);
-                this.finish();
-            } else {
-                Toast.makeText(this, tvBookName.getText().toString() + " can't be deleted!", Toast.LENGTH_SHORT).show();
-            }
+            });
+
+            alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }
     }
 
