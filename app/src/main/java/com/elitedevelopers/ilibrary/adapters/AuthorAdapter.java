@@ -28,7 +28,7 @@ public class AuthorAdapter extends ArrayAdapter<String> {
     }
 
     // view holder class
-    private class ViewHolder {
+    private static class ViewHolder {
         ImageView ivIcon;
         TextView tvName;
     }

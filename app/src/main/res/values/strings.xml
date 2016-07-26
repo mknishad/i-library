@@ -22,4 +22,8 @@
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="sign_out">Sign Out</string>
+    <string name="about_us">We are Elite Developers. Some passionate Android Application Developers. We love to take challenge and solve creative problems. This is our first app. Feel free to contact with us and give your feedback. Thank you.</string>
+    <string name="monir_hossain">Monir Hossain</string>
+    <string name="abdullah_al_mamun">Abdullah Al Mamun</string>
+    <string name="mahabub_hossan">Mahabub Hossan</string>
 </resources>
